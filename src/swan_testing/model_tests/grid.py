@@ -96,7 +96,7 @@ class GridTestResult:
     def nditer(
             self,
             n_dims: SupportsIndex,
-    ) -> Iterator[tuple[IndexDict[str, Any], IndexDict[str, Sequence], Any]]:
+    ) -> Iterator[tuple[IndexDict[str, Any], IndexDict[str, Sequence], np.ndarray | Any]]:
         vars_items = tuple(self.vars.items())
         iter = IndexDict(vars_items[:n_dims])
         extra = IndexDict(vars_items[n_dims:])

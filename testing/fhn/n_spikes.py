@@ -20,7 +20,7 @@ def n_spikes(
     return np.int64(n_spikes)
 
 
-def fhn_act_thresh(
+def activation_thresh(
     pulse_magnitude: float,
     ninety_pct_time: float,
     a: float,
@@ -53,12 +53,12 @@ def main():
         "dt": [0.1],
         "time_per_update": [10.0],
     })
-    result = GridTest(param_grid, fhn_act_thresh).run()
+    result = GridTest(param_grid, activation_thresh).run()
     # result = result.reorder_vars("ninety_pct_time", "a", "b")
-    stplt.grid_test_heat_maps(
+    stplt.save_grid_heat_maps(
         result,
-        "Whether update train induced spikes",
-        "spike_hz/update_train",
+        title="Whether update train induced spikes",
+        filename="spike_hz/update_train",
     )
 
 
