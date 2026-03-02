@@ -1,0 +1,15 @@
+[project]
+name = "swan-testing"
+version = "0.1.0"
+description = "A set of tests exploring SWAN Brains implementations"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.2",
+    "pandas>=3.0.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
