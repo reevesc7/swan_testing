@@ -1,7 +1,7 @@
 [project]
 name = "swan-testing"
 version = "0.1.0"
-description = "A set of tests exploring SWAN Brains implementations"
+description = "A set of tests exploring soft-wired artificial neuron (SWAN) implementations"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
