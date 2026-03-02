@@ -17,9 +17,12 @@ class CurrentSoma(Soma):
         self.current_generator.input_pulses(pulses)
         n_spikes = 0
         for _ in range(int(self.time_per_update / self.dt)):
-            i = self.current_generator.update(self.dt)
+            i = self.current_generator.update(self.dt, self.get_v())
             n_spikes += self.current_receiver.update(i, self.dt)
         return n_spikes * self.spike_magnitude
+
+    def get_v(self) -> float:
+        return self.current_receiver.get_v()
 
     def history(self) -> pd.DataFrame:
         return self.current_receiver.history()

@@ -20,7 +20,8 @@ class ExpConstCurrent(CurrentGenerator):
     def alpha(self, dt: float) -> float:
         return 1 - exp(self.k * dt)
 
-    def update(self, dt: float) -> float:
+    def update(self, dt: float, v: float) -> float:
+        _ = v
         self.current += self.alpha(dt) * (self.target_current - self.current)
         return self.current
 

@@ -23,7 +23,8 @@ class FlatCurrent(CurrentGenerator):
     current_duration: float
     currents: list[FlatCurrent_] = field(default_factory=list)
 
-    def update(self, dt: float) -> float:
+    def update(self, dt: float, v: float) -> float:
+        _ = v
         total_i = sum(current.update(dt) for current in self.currents)
         self.currents = [current for current in self.currents if current.is_active()]
         return total_i

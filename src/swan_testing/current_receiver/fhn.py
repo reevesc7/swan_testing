@@ -30,6 +30,9 @@ class FHN(CurrentReceiver):
         self.update_log((self.t,), (self.v,), (self.w,), (i,), (self.spike_initiated(),))
         return self.spike_initiated()
 
+    def get_v(self) -> float:
+        return self.v
+
     # def next_v(self, i: float, dt: float) -> float:
     #     # i += self.current_generator.next_i(self.v, dt)
     #     dv = self.v - self.v ** 3 / 3 - self.w + i

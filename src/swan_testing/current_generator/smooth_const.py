@@ -16,7 +16,8 @@ class SmoothConstCurrent(CurrentGenerator):
             return 1.0
         return 3 * t ** 2 - 2 * t ** 3
 
-    def update(self, dt: float) -> float:
+    def update(self, dt: float, v: float) -> float:
+        _ = v
         smooth_coeff = self.smoothstep(self.time_since_current_change / self.smooth_time)
         current_diff = self.current - self.last_current
         self.time_since_current_change += dt

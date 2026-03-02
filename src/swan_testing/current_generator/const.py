@@ -7,8 +7,8 @@ from .current_generator import CurrentGenerator
 class ConstCurrent(CurrentGenerator):
     current: float = 0.0
 
-    def update(self, dt: float) -> float:
-        _ = dt
+    def update(self, dt: float, v: float) -> float:
+        _ = dt, v
         return self.current
 
     def input_pulses(self, pulse_vals: Sequence[float]) -> None:

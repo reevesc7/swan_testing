@@ -11,6 +11,9 @@ class Soma(ABC):
     @abstractmethod
     def update(self, pulses: Sequence[float]) -> float: ...
 
+    @abstractmethod
+    def get_v(self) -> float: ...
+
     def pulses_train(self, pulses_vals: Iterable[Sequence[float]]) -> None:
         """Run the FHN for a set of updates with pulses given at each segment.
         #
